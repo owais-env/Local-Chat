@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LocalShare</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login">
+    <h1>LocalShare</h1>
+    <p>Local chat and file sharing. No internet needed.</p>
+    <input id="nameInput" maxlength="20" placeholder="Your name" autofocus>
+    <button id="joinBtn">Join</button>
+  </div>
+
+  <div id="app" hidden>
+    <header>
+      <strong>LocalShare</strong>
+      <span id="count"></span>
+    </header>
+    <main>
+      <section id="chat">
+        <div id="messages"></div>
+        <form id="msgForm">
+          <input id="msgInput" autocomplete="off" placeholder="Type a message">
+          <button type="submit">Send</button>
+        </form>
+      </section>
+      <aside>
+        <h3>Online</h3>
+        <ul id="users"></ul>
+        <h3>Share a file</h3>
+        <input type="file" id="fileInput">
+        <progress id="progress" value="0" max="100" hidden></progress>
+        <div id="uploadStatus"></div>
+        <h3>Shared files</h3>
+        <ul id="files"></ul>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
